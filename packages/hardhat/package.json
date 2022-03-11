@@ -1,0 +1,33 @@
+{
+  "name": "@chessmatic/hardhat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "chain:old": "npx hardhat node",
+    "chain": "hardhat node --network hardhat --no-deploy",
+    "compile": "npx hardhat compile",
+    "clean": "npx hardhat clean",
+    "deploy": "hardhat deploy --export-all ../react-app/src/contracts/hardhat_contracts.json",
+    "deploy:rinkeby": "hardhat deploy --export-all ../react-app/src/contracts/hardhat_contracts.json --network rinkeby",
+    "deploy:rinkeby:old": "hardhat compile && npx hardhat run scripts/deploy.js --network rinkeby",
+    "deploy:mainnet": "npm run compile && npx hardhat run scripts/deploy.js --network mainnet",
+    "postdeploy": "hardhat run scripts/publish.js"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "2.0.3",
+    "@nomiclabs/hardhat-etherscan": "^2.1.7",
+    "@nomiclabs/hardhat-waffle": "2.0.1",
+    "@openzeppelin/contracts": "4.4.0",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "3.4.0",
+    "ethers": "5.5.2",
+    "hardhat": "2.7.0",
+    "hardhat-deploy": "^0.9.14",
+    "hardhat-gas-reporter": "^1.0.4",
+    "hardhat-tracer": "^1.0.0-alpha.6",
+    "solidity-coverage": "^0.7.17"
+  },
+  "dependencies": {
+    "dotenv": "^14.2.0"
+  }
+}
