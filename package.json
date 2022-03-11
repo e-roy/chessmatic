@@ -1,0 +1,34 @@
+{
+  "name": "chessmatic",
+  "version": "1.0.0",
+  "description": "a chess game",
+  "private": true,
+  "scripts": {
+    "dev": "yarn workspace @chessmatic/react-app dev",
+    "build": "yarn workspace @chessmatic/react-app build",
+    "serve": "yarn workspace @chessmatic/react-app serve",
+    "chain": "yarn workspace @chessmatic/hardhat chain",
+    "compile": "yarn workspace @chessmatic/hardhat compile",
+    "clean": "yarn workspace @chessmatic/hardhat clean",
+    "deploy": "yarn workspace @chessmatic/hardhat deploy",
+    "deploy:rinkeby": "yarn workspace @chessmatic/hardhat deploy:rinkeby",
+    "deploy:mainnet": "yarn workspace @chessmatic/hardhat deploy:mainnet"
+  },
+  "author": "Eric Roupe",
+  "license": "MIT",
+  "devDependencies": {},
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@graphprotocol/graph-ts",
+      "**/@graphprotocol/graph-ts/**",
+      "**/hardhat",
+      "**/hardhat/**",
+      "**/hardhat-ts",
+      "**/hardhat-ts/**"
+    ]
+  },
+  "dependencies": {}
+}
