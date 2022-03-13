@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { useContract, useSigner, useAccount } from "wagmi";
-import { Button } from "@/components/elements";
+import { useAccount } from "wagmi";
 import { CreateRoom, JoinRoom } from "@/components/lobby";
 
-import contracts from "@/contracts/hardhat_contracts.json";
 import config from "../../../config.json";
 
 export default function LobbyPage() {
-  const [userGreeting, setUserGreeting] = useState("");
-  const [{ data: signerData }] = useSigner();
   const [{ data: accountData }] = useAccount();
 
   const chainId = Number(config.network.id);
@@ -24,7 +20,7 @@ export default function LobbyPage() {
         </>
       ) : (
         <div className="uppercase text-center m-16 text-xl font-semibold">
-          Please connect your wallet to start a game
+          Please connect your wallet to the Mumbai Testnet to start a game
         </div>
       )}
     </div>
