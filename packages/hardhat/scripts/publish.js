@@ -33,7 +33,7 @@ async function main() {
     });
   });
   //   console.log("✅  Published contracts to the subgraph package.");
-  console.log("✅  Published contracts to the next-app.");
+  console.log("✅  Published contracts to the react-app.");
 }
 main()
   .then(() => process.exit(0))

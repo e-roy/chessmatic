@@ -37,7 +37,8 @@ export default ({ command }: ConfigEnv): UserConfig => {
         port: process.env.PORT === undefined ? 3000 : +process.env.PORT,
       },
       optimizeDeps: {
-        exclude: ["path"],
+        // exclude: ["path"],
+        exclude: ["path", "ipfs-http-client", "electron-fetch"],
       },
     };
   }
@@ -71,7 +72,8 @@ export default ({ command }: ConfigEnv): UserConfig => {
       port: process.env.PORT === undefined ? 3000 : +process.env.PORT,
     },
     optimizeDeps: {
-      exclude: ["path"],
+      // exclude: ["path"],
+      exclude: ["path", "ipfs-http-client", "electron-fetch"],
     },
   };
 };
