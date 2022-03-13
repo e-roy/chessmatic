@@ -53,7 +53,7 @@ export const CreateRoom = () => {
     const tx = await mintPlayContract.createGame(color);
     await tx.wait();
     if (tx.hash) {
-      console.log(tx);
+      // console.log(tx);
       navigate("/chess");
       setLoading(false);
     }
