@@ -8,6 +8,7 @@
     "compile": "npx hardhat compile",
     "clean": "npx hardhat clean",
     "deploy": "hardhat deploy --export-all ../react-app/src/contracts/hardhat_contracts.json",
+    "deploy:mumbai": "hardhat deploy --export-all ../react-app/src/contracts/hardhat_contracts.json --network mumbai",
     "deploy:rinkeby": "hardhat deploy --export-all ../react-app/src/contracts/hardhat_contracts.json --network rinkeby",
     "deploy:rinkeby:old": "hardhat compile && npx hardhat run scripts/deploy.js --network rinkeby",
     "deploy:mainnet": "npm run compile && npx hardhat run scripts/deploy.js --network mainnet",

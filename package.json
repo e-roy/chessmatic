@@ -11,6 +11,7 @@
     "compile": "yarn workspace @chessmatic/hardhat compile",
     "clean": "yarn workspace @chessmatic/hardhat clean",
     "deploy": "yarn workspace @chessmatic/hardhat deploy",
+    "deploy:mumbai": "yarn workspace @chessmatic/hardhat deploy:mumbai",
     "deploy:rinkeby": "yarn workspace @chessmatic/hardhat deploy:rinkeby",
     "deploy:mainnet": "yarn workspace @chessmatic/hardhat deploy:mainnet"
   },
