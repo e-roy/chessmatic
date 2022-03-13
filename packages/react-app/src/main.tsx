@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import { providers } from "ethers";
 import { Connector, Provider, chain, defaultChains } from "wagmi";
@@ -66,9 +66,9 @@ ReactDOM.render(
       provider={provider}
       webSocketProvider={webSocketProvider}
     >
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

@@ -12,7 +12,7 @@ import rook from "@/images/wR.svg";
 import bishop from "@/images/wB.svg";
 import knight from "@/images/wN.svg";
 
-import { useContract, useSigner, useAccount, useProvider } from "wagmi";
+import { useContract, useSigner, useAccount } from "wagmi";
 import contracts from "@/contracts/hardhat_contracts.json";
 import config from "../../../config.json";
 
@@ -24,23 +24,13 @@ export default function ChessPage() {
   const [lastMove, setLastMove] = useState();
   const [userMoveComplete, setUserMoveComplete] = useState(false);
 
-  // const [userGreeting, setUserGreeting] = useState("");
   const [{ data: signerData }] = useSigner();
   const [{ data: accountData }, disconnect] = useAccount();
-  const provider = useProvider();
 
   const chainId = Number(config.network.id);
   const network = config.network.name;
 
-  const GamePlay = contracts[chainId][network].contracts.GamePlay;
-
-  const gamePlayContract = useContract({
-    addressOrName: GamePlay.address,
-    contractInterface: GamePlay.abi,
-    signerOrProvider: signerData,
-  });
-  // console.log(gamePlayContract);
-  // console.log(GamePlay.abi);
+  // console.log(contracts);
 
   const MintPlay = contracts[chainId][network].contracts.MintPlay;
 
@@ -54,15 +44,11 @@ export default function ChessPage() {
   // console.log("contracts", contracts[chainId][network].contracts);
 
   useEffect(() => {
-    // console.log("board", chess.board());
-    // console.log("fen", fen);
     if (fen && userMoveComplete) {
       console.log("setBoard transaction");
       const setBoard = async () => {
-        // const tx = await gamePlayContract.setBoard(fen);
-        // await tx.wait();
-        const tx2 = await mintPlayContract.makeMove(0, fen);
-        await tx2.wait();
+        const tx = await mintPlayContract.makeMove(0, fen);
+        await tx.wait();
         setUserMoveComplete(false);
       };
       setBoard();
@@ -70,7 +56,7 @@ export default function ChessPage() {
   }, [fen]);
 
   useEffect(() => {
-    if (gamePlayContract.signer) {
+    if (mintPlayContract.signer) {
       // console.log("getting board data");
       const getBoard = async () => {
         const _board = await mintPlayContract.getGameDetails(0);
@@ -80,7 +66,7 @@ export default function ChessPage() {
       };
       getBoard();
     }
-  }, [gamePlayContract]);
+  }, [mintPlayContract]);
 
   const handleReset = () => {
     chess.reset();
@@ -126,7 +112,7 @@ export default function ChessPage() {
 
   const onMove = (from, to) => {
     setUserMoveComplete(true);
-    console.log(from, to);
+    // console.log(from, to);
     const moves = chess.moves({ verbose: true });
     for (let i = 0, len = moves.length; i < len; i++) {
       /* eslint-disable-line */
