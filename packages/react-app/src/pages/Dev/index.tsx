@@ -17,10 +17,17 @@ export default function DevPage() {
       <div className="p-1 text-stone-400 font-bold">🥣 LUNCH</div>
 
       <div className="p-1 text-stone-700">✔️ test hardhat deploy contract</div>
-      <div className="p-1 text-stone-700">🧱 create chess page</div>
-      <div className="p-1 text-stone-700">🧱 </div>
+      <div className="p-1 text-stone-700">✔️ create chess page</div>
+      <div className="p-1 text-stone-700">
+        ❌ create pubsub room - (not good for this gameplay)
+      </div>
+
+      <div className="p-1 text-stone-700">🧱 create gameplay contract </div>
 
       <div className="p-1 text-stone-700">🧱 </div>
+      <div className="p-1 text-stone-700">🧱 </div>
+      <div className="p-1 text-stone-700">🧱 </div>
+
       <div className="p-1 text-stone-700">🧱 check for correct network</div>
       <div className="p-1 text-stone-700">🧱 set up for polygon</div>
 
