@@ -16,7 +16,7 @@ export default function LandingPage() {
 
           <div className="max-w-md">
             <p className="font-source-sans-pro text-stone-100 mt-6 text-xl">
-              Create and Play Chess on the <br /> Polygon Blockchain
+              Play Chess on the <br /> Mumbai Testnet
             </p>
           </div>
 
