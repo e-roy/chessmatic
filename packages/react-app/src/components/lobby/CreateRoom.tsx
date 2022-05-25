@@ -15,8 +15,8 @@ export const CreateRoom = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [userColor, setUserColor] = useState(true);
-  const [{ data: signerData }] = useSigner();
-  const [{ data: accountData }] = useAccount();
+  const { data: signerData } = useSigner();
+  const { data: accountData } = useAccount();
   //   const web3 = new Web3("http://localhost:8545");
 
   const chainId = Number(config.network.id);

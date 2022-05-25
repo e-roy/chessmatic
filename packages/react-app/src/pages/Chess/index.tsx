@@ -24,8 +24,8 @@ export default function ChessPage() {
   const [lastMove, setLastMove] = useState();
   const [userMoveComplete, setUserMoveComplete] = useState(false);
 
-  const [{ data: signerData }] = useSigner();
-  const [{ data: accountData }, disconnect] = useAccount();
+  const { data: signerData } = useSigner();
+  const { data: accountData } = useAccount();
 
   const chainId = Number(config.network.id);
   const network = config.network.name;
