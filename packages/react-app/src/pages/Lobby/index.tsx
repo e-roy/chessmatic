@@ -5,7 +5,7 @@ import { CreateRoom, JoinRoom } from "@/components/lobby";
 import config from "../../../config.json";
 
 export default function LobbyPage() {
-  const [{ data: accountData }] = useAccount();
+  const { data: accountData } = useAccount();
 
   const chainId = Number(config.network.id);
   const network = config.network.name;

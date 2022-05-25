@@ -5,7 +5,7 @@ import contracts from "@/contracts/hardhat_contracts.json";
 import config from "../../../config.json";
 
 export const JoinRoom = () => {
-  const [{ data: signerData }] = useSigner();
+  const { data: signerData } = useSigner();
 
   const chainId = Number(config.network.id);
   const network = config.network.name;
