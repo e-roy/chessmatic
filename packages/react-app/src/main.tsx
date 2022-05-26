@@ -41,7 +41,7 @@ const { chains, provider } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: "Building Blocks",
+  appName: "ChessMatic",
   chains,
 });
 
