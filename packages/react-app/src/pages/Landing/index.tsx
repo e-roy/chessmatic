@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/elements";
-import image from "@/images/landing-chess.png";
+import { Button } from "../../components/elements";
+import image from "../../images/landing-chess.png";
+
+import { IS_PRODUCTION, IS_DEVELOPMENT } from "../../constants";
+
+const NODE_ENV = import.meta.env.PROD;
 
 export default function LandingPage() {
   const navigate = useNavigate();
+
+  // console.log("IS_PRODUCTION", IS_PRODUCTION);
+  // console.log("IS_DEVELOPMENT", IS_DEVELOPMENT);
+  // console.log("process.env.NODE_ENV", NODE_ENV);
 
   return (
     <div className="">
@@ -28,6 +36,10 @@ export default function LandingPage() {
           <img src={image} alt="chessmatic" />
         </div>
       </div>
+      <footer>
+        {IS_PRODUCTION && <div>production</div>}
+        {IS_DEVELOPMENT && <div>development</div>}
+      </footer>
     </div>
   );
 }

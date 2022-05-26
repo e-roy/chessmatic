@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContract, useSigner, useAccount } from "wagmi";
-import { Button } from "@/components/elements";
+import { Button } from "../../components/elements";
 import { Switch } from "@headlessui/react";
-import contracts from "@/contracts/hardhat_contracts.json";
+import contracts from "../../contracts/hardhat_contracts.json";
 import config from "../../../config.json";
 // import Web3 from "web3";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+// function classNames(...classes) {
+//   return classes.filter(Boolean).join(" ");
+// }
 
 export const CreateRoom = () => {
   const navigate = useNavigate();
