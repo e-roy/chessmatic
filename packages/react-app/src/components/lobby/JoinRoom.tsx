@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useContract, useSigner, useAccount } from "wagmi";
-import { Button } from "@/components/elements";
-import contracts from "@/contracts/hardhat_contracts.json";
+import { Button } from "../../components/elements";
+import contracts from "../../contracts/hardhat_contracts.json";
 import config from "../../../config.json";
 
 export const JoinRoom = () => {

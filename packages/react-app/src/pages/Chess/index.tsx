@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Button, Modal } from "@/components/elements";
+import { Button, Modal } from "../../components/elements";
 
-import { MainBoard } from "@/components/board";
+import { MainBoard } from "../../components/board";
 
 import { Chess } from "chess.js";
 import Chessground from "react-chessground";
 import "react-chessground/dist/styles/chessground.css";
 // import "./custom-chessground.css";
-import queen from "@/images/wQ.svg";
-import rook from "@/images/wR.svg";
-import bishop from "@/images/wB.svg";
-import knight from "@/images/wN.svg";
+import queen from "../../images/wQ.svg";
+import rook from "../../images/wR.svg";
+import bishop from "../../images/wB.svg";
+import knight from "../../images/wN.svg";
 
 import { useContract, useSigner, useAccount } from "wagmi";
-import contracts from "@/contracts/hardhat_contracts.json";
+import contracts from "../../contracts/hardhat_contracts.json";
 import config from "../../../config.json";
 
 export default function ChessPage() {
