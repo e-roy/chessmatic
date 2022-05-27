@@ -5,7 +5,7 @@ import image from "../../images/landing-chess.png";
 
 import { IS_PRODUCTION, IS_DEVELOPMENT } from "../../constants";
 
-const NODE_ENV = import.meta.env.PROD;
+// const NODE_ENV = import.meta.env.PROD;
 
 export default function LandingPage() {
   const navigate = useNavigate();
