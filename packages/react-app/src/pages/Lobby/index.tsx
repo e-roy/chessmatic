@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAccount } from "wagmi";
-import { CreateRoom, JoinRoom } from "../../components/lobby";
+import { CreateRoom, JoinRoom } from "@/components/lobby";
 
 import config from "../../../config.json";
 
