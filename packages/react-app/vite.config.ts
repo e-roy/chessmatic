@@ -28,7 +28,12 @@ export default defineConfig(({ command, mode }) => {
     build: {
       outDir: join(srcRoot, "/build"),
       emptyOutDir: true,
-      rollupOptions: {},
+      rollupOptions: {
+        external:
+          [
+            "globalThis"
+          ]
+      },
     },
   };
 });
