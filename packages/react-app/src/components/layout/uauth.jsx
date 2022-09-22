@@ -1,6 +1,9 @@
 import React, { useState } from "react"
 import UAuth from "@uauth/js"
 import styled from "styled-components";
+import type { IUAuthOptions } from "@uauth/web3modal";
+import UAuthSPA from "@uauth/js";
+import * as UAuthWeb3Modal from "./ud_web3modal";
 
 const uauth = new UAuth({
     clientID: "f68f2cf7-eba6-41b5-ad24-5f2b10190156",
@@ -36,10 +39,12 @@ function UDomain() {
         try {
             const authorization = await uauth.loginWithPopup()
             setUauth(JSON.parse(JSON.stringify(authorization))["idToken"])
-
-            await authenticate()
-        } catch (error) {
-            console.error(error)
+            
+        let connection;
+        if (wallet == "custom-uauth") {
+            connection = await web3Modal.connectTo(wallet);
+        } else {
+            connection = await web3Modal.connect();
         }
     }
 
