@@ -1,5 +1,6 @@
 import React from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import UDomain from "./uauth.jsx";
 
 export const AppHeader = () => {
   return (
@@ -7,6 +8,7 @@ export const AppHeader = () => {
       <div></div>
       <div>
         <ConnectButton />
+        <UDomain />
       </div>
     </header>
   );
